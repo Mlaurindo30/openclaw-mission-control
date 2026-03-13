@@ -24,3 +24,21 @@ backend/coverage.*
 backend/.coverage
 frontend/coverage
 backend/app/services/openclaw/.device-keys
+
+# Mission Control local config
+compose.override.yml
+compose.prod.yml
+compose.*.yml
+
+# Environment files with secrets
+.env
+backend/.env
+frontend/.env
+
+# Example env files (keep in repo)
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Database volumes (too large for git)
+postgres_data/
