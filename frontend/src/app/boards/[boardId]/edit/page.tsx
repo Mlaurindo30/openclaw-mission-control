@@ -137,10 +137,10 @@ function WebhookCard({
   return (
     <div
       key={webhook.id}
-      className="space-y-3 rounded-lg border border-slate-200 px-4 py-4"
+      className="space-y-3 rounded-lg border border-[var(--border)] px-4 py-4"
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <span className="text-sm font-semibold text-slate-900">
+        <span className="text-sm font-semibold text-[var(--text)]">
           Webhook {webhook.id.slice(0, 8)}
         </span>
         <div className="flex items-center gap-2">
@@ -218,7 +218,7 @@ function WebhookCard({
             disabled={isBusy}
           />
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-900">Agent</label>
+            <label className="text-sm font-medium text-[var(--text)]">Agent</label>
             <Select
               value={draftAgentValue}
               onValueChange={setDraftAgentValue}
@@ -243,19 +243,19 @@ function WebhookCard({
         </>
       ) : (
         <>
-          <div className="text-sm text-slate-700">
+          <div className="text-sm text-[var(--text-muted)]">
             <Markdown
               content={webhook.description || ""}
               variant="description"
             />
           </div>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-[var(--text-muted)]">
             Recipient: {mappedAgent?.name ?? "Lead agent"}
           </p>
         </>
       )}
       <div className="rounded-md bg-[var(--surface-muted)] px-3 py-2">
-        <code className="break-all text-xs text-slate-700">
+        <code className="break-all text-xs text-[var(--text-muted)]">
           {webhook.endpoint_url ?? webhook.endpoint_path}
         </code>
       </div>
@@ -769,7 +769,7 @@ export default function EditBoardPage() {
         <div className="space-y-6">
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
+            className="space-y-6 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm"
           >
             {resolvedBoardType !== "general" &&
             baseBoard &&
@@ -795,7 +795,7 @@ export default function EditBoardPage() {
             ) : null}
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-900">
+                <label className="text-sm font-medium text-[var(--text)]">
                   Board name <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -806,7 +806,7 @@ export default function EditBoardPage() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-900">
+                <label className="text-sm font-medium text-[var(--text)]">
                   Gateway <span className="text-red-500">*</span>
                 </label>
                 <SearchableSelect
@@ -817,16 +817,16 @@ export default function EditBoardPage() {
                   placeholder="Select gateway"
                   searchPlaceholder="Search gateways..."
                   emptyMessage="No gateways found."
-                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                  contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
+                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  contentClassName="rounded-xl border border-[var(--border)] shadow-lg"
+                  itemClassName="px-4 py-3 text-sm text-[var(--text-muted)] data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-[var(--text)]"
                 />
               </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-900">
+                <label className="text-sm font-medium text-[var(--text)]">
                   Board type
                 </label>
                 <Select value={resolvedBoardType} onValueChange={setBoardType}>
@@ -839,7 +839,7 @@ export default function EditBoardPage() {
                   </SelectContent>
                 </Select>
                 <div className="space-y-2 pt-1">
-                  <label className="text-sm font-medium text-slate-900">
+                  <label className="text-sm font-medium text-[var(--text)]">
                     Max worker agents
                   </label>
                   <Input
@@ -860,7 +860,7 @@ export default function EditBoardPage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-900">
+                <label className="text-sm font-medium text-[var(--text)]">
                   Board group
                 </label>
                 <SearchableSelect
@@ -871,19 +871,19 @@ export default function EditBoardPage() {
                   placeholder="No group"
                   searchPlaceholder="Search groups..."
                   emptyMessage="No groups found."
-                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                  contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
+                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  contentClassName="rounded-xl border border-[var(--border)] shadow-lg"
+                  itemClassName="px-4 py-3 text-sm text-[var(--text-muted)] data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-[var(--text)]"
                   disabled={isLoading}
                 />
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-[var(--text-quiet)]">
                   Boards in the same group can share cross-board context for
                   agents.
                 </p>
               </div>
               {resolvedBoardType !== "general" ? (
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-900">
+                  <label className="text-sm font-medium text-[var(--text)]">
                     Target date
                   </label>
                   <Input
@@ -897,7 +897,7 @@ export default function EditBoardPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-900">
+              <label className="text-sm font-medium text-[var(--text)]">
                 Description <span className="text-red-500">*</span>
               </label>
               <Textarea
@@ -912,7 +912,7 @@ export default function EditBoardPage() {
             {resolvedBoardType !== "general" ? (
               <>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-900">
+                  <label className="text-sm font-medium text-[var(--text)]">
                     Objective
                   </label>
                   <Textarea
@@ -925,7 +925,7 @@ export default function EditBoardPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-900">
+                  <label className="text-sm font-medium text-[var(--text)]">
                     Success metrics (JSON)
                   </label>
                   <Textarea
@@ -935,7 +935,7 @@ export default function EditBoardPage() {
                     className="min-h-[140px] font-mono text-xs"
                     disabled={isLoading}
                   />
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-[var(--text-quiet)]">
                     Add key outcomes so the lead agent can measure progress.
                   </p>
                   {metricsError ? (
@@ -945,16 +945,16 @@ export default function EditBoardPage() {
               </>
             ) : null}
 
-            <section className="space-y-3 border-t border-slate-200 pt-4">
+            <section className="space-y-3 border-t border-[var(--border)] pt-4">
               <div>
-                <h2 className="text-base font-semibold text-slate-900">
+                <h2 className="text-base font-semibold text-[var(--text)]">
                   Rules
                 </h2>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-[var(--text-muted)]">
                   Configure board-level workflow enforcement.
                 </p>
               </div>
-              <div className="flex items-start gap-3 rounded-lg border border-slate-200 px-3 py-3">
+              <div className="flex items-start gap-3 rounded-lg border border-[var(--border)] px-3 py-3">
                 <button
                   type="button"
                   role="switch"
@@ -979,17 +979,17 @@ export default function EditBoardPage() {
                   />
                 </button>
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-slate-900">
+                  <span className="block text-sm font-medium text-[var(--text)]">
                     Require approval
                   </span>
-                  <span className="block text-xs text-slate-600">
+                  <span className="block text-xs text-[var(--text-muted)]">
                     Require at least one linked approval in{" "}
                     <code>approved</code> state before a task can be marked{" "}
                     <code>done</code>.
                   </span>
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg border border-slate-200 px-3 py-3">
+              <div className="flex items-start gap-3 rounded-lg border border-[var(--border)] px-3 py-3">
                 <button
                   type="button"
                   role="switch"
@@ -1014,16 +1014,16 @@ export default function EditBoardPage() {
                   />
                 </button>
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-slate-900">
+                  <span className="block text-sm font-medium text-[var(--text)]">
                     Require review before done
                   </span>
-                  <span className="block text-xs text-slate-600">
+                  <span className="block text-xs text-[var(--text-muted)]">
                     Tasks must move to <code>review</code> before they can be
                     marked <code>done</code>.
                   </span>
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg border border-slate-200 px-3 py-3">
+              <div className="flex items-start gap-3 rounded-lg border border-[var(--border)] px-3 py-3">
                 <button
                   type="button"
                   role="switch"
@@ -1050,16 +1050,16 @@ export default function EditBoardPage() {
                   />
                 </button>
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-slate-900">
+                  <span className="block text-sm font-medium text-[var(--text)]">
                     Require comment for review
                   </span>
-                  <span className="block text-xs text-slate-600">
+                  <span className="block text-xs text-[var(--text-muted)]">
                     Require a task comment when moving status to{" "}
                     <code>review</code>.
                   </span>
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg border border-slate-200 px-3 py-3">
+              <div className="flex items-start gap-3 rounded-lg border border-[var(--border)] px-3 py-3">
                 <button
                   type="button"
                   role="switch"
@@ -1086,16 +1086,16 @@ export default function EditBoardPage() {
                   />
                 </button>
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-slate-900">
+                  <span className="block text-sm font-medium text-[var(--text)]">
                     Block status changes with pending approval
                   </span>
-                  <span className="block text-xs text-slate-600">
+                  <span className="block text-xs text-[var(--text-muted)]">
                     Prevent status transitions while any linked approval is in{" "}
                     <code>pending</code> state.
                   </span>
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg border border-slate-200 px-3 py-3">
+              <div className="flex items-start gap-3 rounded-lg border border-[var(--border)] px-3 py-3">
                 <button
                   type="button"
                   role="switch"
@@ -1120,10 +1120,10 @@ export default function EditBoardPage() {
                   />
                 </button>
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-slate-900">
+                  <span className="block text-sm font-medium text-[var(--text)]">
                     Only lead can change status
                   </span>
-                  <span className="block text-xs text-slate-600">
+                  <span className="block text-xs text-[var(--text-muted)]">
                     Restrict status changes to the board lead.
                   </span>
                 </span>
@@ -1131,7 +1131,7 @@ export default function EditBoardPage() {
             </section>
 
             {gateways.length === 0 ? (
-              <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-600">
+              <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-sm text-[var(--text-muted)]">
                 <p>
                   No gateways available. Create one in Gateways to continue.
                 </p>
@@ -1159,18 +1159,18 @@ export default function EditBoardPage() {
               </Button>
             </div>
 
-            <section className="space-y-4 border-t border-slate-200 pt-4">
+            <section className="space-y-4 border-t border-[var(--border)] pt-4">
               <div>
-                <h2 className="text-base font-semibold text-slate-900">
+                <h2 className="text-base font-semibold text-[var(--text)]">
                   Webhooks
                 </h2>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-[var(--text-muted)]">
                   Add inbound webhook endpoints so the lead agent can react to
                   external events.
                 </p>
               </div>
-              <div className="space-y-3 rounded-lg border border-slate-200 px-4 py-4">
-                <label className="text-sm font-medium text-slate-900">
+              <div className="space-y-3 rounded-lg border border-[var(--border)] px-4 py-4">
+                <label className="text-sm font-medium text-[var(--text)]">
                   Lead agent instruction
                 </label>
                 <Textarea
@@ -1183,7 +1183,7 @@ export default function EditBoardPage() {
                   disabled={isLoading || isWebhookBusy}
                 />
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-900">
+                  <label className="text-sm font-medium text-[var(--text)]">
                     Agent
                   </label>
                   <Select
@@ -1230,11 +1230,11 @@ export default function EditBoardPage() {
               ) : null}
 
               {webhooksQuery.isLoading ? (
-                <p className="text-sm text-slate-500">Loading webhooks…</p>
+                <p className="text-sm text-[var(--text-quiet)]">Loading webhooks…</p>
               ) : null}
 
               {!webhooksQuery.isLoading && webhooks.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-slate-300 px-4 py-3 text-sm text-slate-600">
+                <p className="rounded-lg border border-dashed border-slate-300 px-4 py-3 text-sm text-[var(--text-muted)]">
                   No webhooks configured yet.
                 </p>
               ) : null}
@@ -1275,7 +1275,7 @@ export default function EditBoardPage() {
             <DialogClose asChild>
               <button
                 type="button"
-                className="sticky top-4 z-10 ml-auto rounded-lg border border-slate-200 bg-[color:var(--surface)] p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
+                className="sticky top-4 z-10 ml-auto rounded-lg border border-[var(--border)] bg-[color:var(--surface)] p-2 text-[var(--text-quiet)] transition hover:bg-[var(--surface-muted)]"
                 aria-label="Close onboarding"
               >
                 <X className="h-4 w-4" />
@@ -1288,7 +1288,7 @@ export default function EditBoardPage() {
               onConfirmed={handleOnboardingConfirmed}
             />
           ) : (
-            <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-sm text-slate-600">
+            <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-sm text-[var(--text-muted)]">
               Unable to start onboarding.
             </div>
           )}

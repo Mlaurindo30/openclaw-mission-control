@@ -120,7 +120,7 @@ export function AgentsTable({
         accessorKey: "openclaw_session_id",
         header: "Session",
         cell: ({ row }) => (
-          <span className="text-sm text-slate-700">
+          <span className="text-sm text-[var(--text-muted)]">
             {truncate(row.original.openclaw_session_id)}
           </span>
         ),
@@ -131,7 +131,7 @@ export function AgentsTable({
         cell: ({ row }) => {
           const boardId = row.original.board_id;
           if (!boardId) {
-            return <span className="text-sm text-slate-700">—</span>;
+            return <span className="text-sm text-[var(--text-muted)]">—</span>;
           }
           const boardName = boardNameById.get(boardId) ?? boardId;
           return linkifyCell({

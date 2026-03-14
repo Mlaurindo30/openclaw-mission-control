@@ -52,12 +52,12 @@ export function DependencyBanner({
                   ? "border-rose-200 bg-rose-50 hover:bg-rose-100/40"
                   : isDone
                     ? "border-emerald-200 bg-emerald-50 hover:bg-emerald-100/40"
-                    : "border-slate-200 bg-[var(--surface)] hover:bg-[var(--surface-muted)]",
+                    : "border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-muted)]",
                 dependency.disabled && "cursor-not-allowed opacity-60",
               )}
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="truncate text-sm font-medium text-slate-900">
+                <p className="truncate text-sm font-medium text-[var(--text)]">
                   {dependency.title}
                 </p>
                 <span
@@ -67,7 +67,7 @@ export function DependencyBanner({
                       ? "text-rose-700"
                       : isDone
                         ? "text-emerald-700"
-                        : "text-slate-500",
+                        : "text-[var(--text-quiet)]",
                   )}
                 >
                   {dependency.statusLabel}
@@ -77,7 +77,7 @@ export function DependencyBanner({
           );
         })
       ) : (
-        <p className="text-sm text-slate-500">{emptyMessage}</p>
+        <p className="text-sm text-[var(--text-quiet)]">{emptyMessage}</p>
       )}
       {children ? (
         <div

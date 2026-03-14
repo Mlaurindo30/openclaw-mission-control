@@ -21,8 +21,8 @@ export function SignedOutPanel({
 }: SignedOutPanelProps) {
   return (
     <div className="col-span-1 md:col-span-2 flex min-h-[calc(100vh-64px)] items-center justify-center bg-[var(--surface-muted)] p-10 text-center">
-      <div className="rounded-xl border border-slate-200 bg-[var(--surface)] px-4 py-4 md:px-8 md:py-6 shadow-sm">
-        <p className="text-sm text-slate-600">{message}</p>
+      <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-4 md:px-8 md:py-6 shadow-sm">
+        <p className="text-sm text-[var(--text-muted)]">{message}</p>
         <SignInButton
           mode={mode}
           forceRedirectUrl={forceRedirectUrl}

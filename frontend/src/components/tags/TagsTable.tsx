@@ -81,14 +81,14 @@ export function TagsTable({
           const color = normalizeColor(row.original.color);
           return (
             <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-[var(--surface)] px-2.5 py-1 text-xs font-semibold text-slate-800">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1 text-xs font-semibold text-[var(--text)]">
                 <span
                   className="h-2 w-2 rounded-full"
                   style={{ backgroundColor: `#${color}` }}
                 />
                 {row.original.name}
               </div>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-[var(--text-quiet)]">
                 {row.original.slug}
                 {row.original.description
                   ? ` · ${row.original.description}`
@@ -104,7 +104,7 @@ export function TagsTable({
         cell: ({ row }) => {
           const color = normalizeColor(row.original.color);
           return (
-            <div className="inline-flex items-center gap-2 text-xs text-slate-700">
+            <div className="inline-flex items-center gap-2 text-xs text-[var(--text-muted)]">
               <span
                 className="h-4 w-4 rounded border border-slate-300"
                 style={{ backgroundColor: `#${color}` }}
@@ -118,7 +118,7 @@ export function TagsTable({
         accessorKey: "task_count",
         header: "Tasks",
         cell: ({ row }) => (
-          <span className="text-sm font-medium text-slate-700">
+          <span className="text-sm font-medium text-[var(--text-muted)]">
             {row.original.task_count ?? 0}
           </span>
         ),

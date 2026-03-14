@@ -788,8 +788,8 @@ export default function SkillsMarketplacePage() {
       >
         <div className="space-y-6">
           {gateways.length === 0 ? (
-            <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 text-sm text-slate-600 shadow-sm">
-              <p className="font-medium text-slate-900">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 text-sm text-[var(--text-muted)] shadow-sm">
+              <p className="font-medium text-[var(--text)]">
                 No gateways available yet.
               </p>
               <p className="mt-2">
@@ -804,12 +804,12 @@ export default function SkillsMarketplacePage() {
             </div>
           ) : (
             <>
-              <div className="mb-5 rounded-xl border border-slate-200 bg-[var(--surface)] p-4 shadow-sm">
+              <div className="mb-5 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-sm">
                 <div className="grid gap-4 md:grid-cols-[1fr_240px_240px]">
                   <div>
                     <label
                       htmlFor="marketplace-search"
-                      className="mb-1 block text-sm font-medium text-slate-700"
+                      className="mb-1 block text-sm font-medium text-[var(--text-muted)]"
                     >
                       Search
                     </label>
@@ -824,7 +824,7 @@ export default function SkillsMarketplacePage() {
                   <div>
                     <label
                       htmlFor="marketplace-category-filter"
-                      className="mb-1 block text-sm font-medium text-slate-700"
+                      className="mb-1 block text-sm font-medium text-[var(--text-muted)]"
                     >
                       Category
                     </label>
@@ -854,7 +854,7 @@ export default function SkillsMarketplacePage() {
                   <div>
                     <label
                       htmlFor="marketplace-risk-filter"
-                      className="mb-1 block text-sm font-medium text-slate-700"
+                      className="mb-1 block text-sm font-medium text-[var(--text-muted)]"
                     >
                       Risk
                     </label>
@@ -880,7 +880,7 @@ export default function SkillsMarketplacePage() {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
+              <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-sm">
                 <MarketplaceSkillsTable
                   skills={filteredSkills}
                   installedGatewayNamesBySkillId={
@@ -901,13 +901,13 @@ export default function SkillsMarketplacePage() {
                   }}
                 />
               </div>
-              <div className="flex items-center justify-between rounded-xl border border-slate-200 bg-[var(--surface)] px-4 py-3 text-sm text-slate-600 shadow-sm">
+              <div className="flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-muted)] shadow-sm">
                 <div className="flex items-center gap-3">
                   <p>
                     Showing {rangeStart}-{rangeEnd} of {totalSkills}
                   </p>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                    <span className="text-xs font-medium uppercase tracking-wide text-[var(--text-quiet)]">
                       Rows
                     </span>
                     <Select
@@ -951,7 +951,7 @@ export default function SkillsMarketplacePage() {
                   >
                     Previous
                   </Button>
-                  <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                  <span className="text-xs font-medium uppercase tracking-wide text-[var(--text-quiet)]">
                     {totalCountInfo.hasKnownTotal
                       ? `Page ${currentPage} of ${totalPages}`
                       : `Page ${currentPage}`}

@@ -60,10 +60,10 @@ export function GatewayForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
+      className="space-y-6 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm"
     >
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-900">
+        <label className="text-sm font-medium text-[var(--text)]">
           Gateway name <span className="text-red-500">*</span>
         </label>
         <Input
@@ -76,7 +76,7 @@ export function GatewayForm({
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-900">
+          <label className="text-sm font-medium text-[var(--text)]">
             Gateway URL <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -95,7 +95,7 @@ export function GatewayForm({
           ) : null}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-900">
+          <label className="text-sm font-medium text-[var(--text)]">
             Gateway token
           </label>
           <Input
@@ -109,7 +109,7 @@ export function GatewayForm({
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-900">
+          <label className="text-sm font-medium text-[var(--text)]">
             Workspace root <span className="text-red-500">*</span>
           </label>
           <Input
@@ -121,10 +121,10 @@ export function GatewayForm({
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-900">
+          <label className="text-sm font-medium text-[var(--text)]">
             Disable device pairing
           </label>
-          <label className="flex h-10 items-center gap-3 px-1 text-sm text-slate-900">
+          <label className="flex h-10 items-center gap-3 px-1 text-sm text-[var(--text)]">
             <button
               type="button"
               role="switch"
@@ -151,10 +151,10 @@ export function GatewayForm({
       </div>
 
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-900">
+        <label className="text-sm font-medium text-[var(--text)]">
           Allow self-signed TLS certificates
         </label>
-        <label className="flex h-10 items-center gap-3 px-1 text-sm text-slate-900">
+        <label className="flex h-10 items-center gap-3 px-1 text-sm text-[var(--text)]">
           <button
             type="button"
             role="switch"

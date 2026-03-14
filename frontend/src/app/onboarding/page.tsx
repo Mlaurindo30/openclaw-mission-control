@@ -115,12 +115,12 @@ export default function OnboardingPage() {
     <DashboardShell>
       <SignedOut>
         <div className="lg:col-span-2 flex min-h-[70vh] items-center justify-center">
-          <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
-            <div className="border-b border-slate-100 px-6 py-5">
-              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
+          <div className="w-full max-w-2xl rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-sm">
+            <div className="border-b border-[var(--border)] px-6 py-5">
+              <h1 className="text-2xl font-semibold tracking-tight text-[var(--text)]">
                 Mission Control profile
               </h1>
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Sign in to configure your profile and timezone.
               </p>
             </div>
@@ -138,12 +138,12 @@ export default function OnboardingPage() {
       </SignedOut>
       <SignedIn>
         <div className="lg:col-span-2 flex min-h-[70vh] items-center justify-center">
-          <section className="w-full max-w-2xl rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
-            <div className="border-b border-slate-100 px-6 py-5">
-              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
+          <section className="w-full max-w-2xl rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-sm">
+            <div className="border-b border-[var(--border)] px-6 py-5">
+              <h1 className="text-2xl font-semibold tracking-tight text-[var(--text)]">
                 Mission Control profile
               </h1>
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Configure your mission control settings and preferences.
               </p>
             </div>
@@ -151,8 +151,8 @@ export default function OnboardingPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-                      <User className="h-4 w-4 text-slate-500" />
+                    <label className="text-sm font-medium text-[var(--text-muted)] flex items-center gap-2">
+                      <User className="h-4 w-4 text-[var(--text-quiet)]" />
                       Name
                       <span className="text-red-500">*</span>
                     </label>
@@ -161,12 +161,12 @@ export default function OnboardingPage() {
                       onChange={(event) => setName(event.target.value)}
                       placeholder="Enter your name"
                       disabled={isLoading}
-                      className="border-slate-300 text-slate-900 focus-visible:ring-blue-500"
+                      className="border-slate-300 text-[var(--text)] focus-visible:ring-blue-500"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-                      <Globe className="h-4 w-4 text-slate-500" />
+                    <label className="text-sm font-medium text-[var(--text-muted)] flex items-center gap-2">
+                      <Globe className="h-4 w-4 text-[var(--text-quiet)]" />
                       Timezone
                       <span className="text-red-500">*</span>
                     </label>
@@ -178,9 +178,9 @@ export default function OnboardingPage() {
                       placeholder="Select timezone"
                       searchPlaceholder="Search timezones..."
                       emptyMessage="No matching timezones."
-                      triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                      contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                      itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
+                      triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                      contentClassName="rounded-xl border border-[var(--border)] shadow-lg"
+                      itemClassName="px-4 py-3 text-sm text-[var(--text-muted)] data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-[var(--text)]"
                     />
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function OnboardingPage() {
                 </div>
 
                 {errorMessage ? (
-                  <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-xs text-slate-600">
+                  <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] p-3 text-xs text-[var(--text-muted)]">
                     {errorMessage}
                   </div>
                 ) : null}
@@ -215,7 +215,7 @@ export default function OnboardingPage() {
                       setTimezone("");
                       setError(null);
                     }}
-                    className="flex-1 rounded-md border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--surface-muted)]"
+                    className="flex-1 rounded-md border border-slate-300 px-4 py-2.5 text-sm font-medium text-[var(--text-muted)] transition-colors hover:bg-[var(--surface-muted)]"
                   >
                     <span className="inline-flex items-center gap-2">
                       <RotateCcw className="h-4 w-4" />

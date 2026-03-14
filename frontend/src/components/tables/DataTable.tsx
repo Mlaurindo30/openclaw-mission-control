@@ -60,7 +60,7 @@ export function DataTable<TData>({
   tableClassName = "w-full text-left text-sm",
   headerClassName,
   headerCellClassName = "px-3 py-2 md:px-6 md:py-3",
-  bodyClassName = "divide-y divide-slate-100",
+  bodyClassName = "divide-y divide-[var(--border)]",
   rowClassName = "hover:bg-[var(--surface-muted)]",
   cellClassName = "px-3 py-3 md:px-6 md:py-4",
 }: DataTableProps<TData>) {
@@ -93,7 +93,7 @@ export function DataTable<TData>({
         <thead
           className={
             headerClassName ??
-            `${stickyHeader ? "sticky top-0 z-10 " : ""}bg-[var(--surface-muted)] text-xs font-semibold uppercase tracking-wider text-slate-500`
+            `${stickyHeader ? "sticky top-0 z-10 " : ""}bg-[var(--surface-muted)] text-xs font-semibold uppercase tracking-wider text-[var(--text-quiet)]`
           }
         >
           {table.getHeaderGroups().map((headerGroup) => (
@@ -206,7 +206,7 @@ export function DataTable<TData>({
             <tr>
               <td
                 colSpan={colSpan}
-                className="px-6 py-8 text-sm text-slate-500"
+                className="px-6 py-8 text-sm text-[var(--text-quiet)]"
               >
                 {emptyMessage}
               </td>

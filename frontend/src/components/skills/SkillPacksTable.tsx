@@ -65,10 +65,10 @@ export function SkillPacksTable({
         header: "Pack",
         cell: ({ row }) => (
           <div>
-            <p className="text-sm font-medium text-slate-900">
+            <p className="text-sm font-medium text-[var(--text)]">
               {row.original.name}
             </p>
-            <p className="mt-1 line-clamp-2 text-xs text-slate-500">
+            <p className="mt-1 line-clamp-2 text-xs text-[var(--text-quiet)]">
               {row.original.description || "No description provided."}
             </p>
           </div>
@@ -82,7 +82,7 @@ export function SkillPacksTable({
             href={row.original.source_url}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-blue-600"
+            className="inline-flex items-center gap-1 text-sm font-medium text-[var(--text-muted)] hover:text-blue-600"
           >
             {truncate(row.original.source_url, 48)}
           </Link>
@@ -92,7 +92,7 @@ export function SkillPacksTable({
         accessorKey: "branch",
         header: "Branch",
         cell: ({ row }) => (
-          <p className="text-sm text-slate-900">
+          <p className="text-sm text-[var(--text)]">
             {row.original.branch || "main"}
           </p>
         ),

@@ -117,7 +117,7 @@ export function BoardsTable({
         cell: ({ row }) => {
           const groupId = row.original.board_group_id;
           if (!groupId) {
-            return <span className="text-sm text-slate-400">—</span>;
+            return <span className="text-sm text-[var(--text-quiet)]">—</span>;
           }
           const group = groupById.get(groupId);
           const label = group?.name ?? compactId(groupId);

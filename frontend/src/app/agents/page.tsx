@@ -142,7 +142,7 @@ export default function AgentsPage() {
         adminOnlyMessage="Only organization owners and admins can access agents."
         stickyHeader
       >
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
+        <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-sm">
           <AgentsTable
             agents={agents}
             boards={boards}

@@ -161,12 +161,12 @@ export default function NewBoardPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
+        className="space-y-6 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm"
       >
         <div className="space-y-4">
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-900">
+              <label className="text-sm font-medium text-[var(--text)]">
                 Board name <span className="text-red-500">*</span>
               </label>
               <Input
@@ -177,7 +177,7 @@ export default function NewBoardPage() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-900">
+              <label className="text-sm font-medium text-[var(--text)]">
                 Gateway <span className="text-red-500">*</span>
               </label>
               <SearchableSelect
@@ -188,16 +188,16 @@ export default function NewBoardPage() {
                 placeholder="Select gateway"
                 searchPlaceholder="Search gateways..."
                 emptyMessage="No gateways found."
-                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
+                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                contentClassName="rounded-xl border border-[var(--border)] shadow-lg"
+                itemClassName="px-4 py-3 text-sm text-[var(--text-muted)] data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-[var(--text)]"
               />
             </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-900">
+              <label className="text-sm font-medium text-[var(--text)]">
                 Board group
               </label>
               <SearchableSelect
@@ -208,19 +208,19 @@ export default function NewBoardPage() {
                 placeholder="No group"
                 searchPlaceholder="Search groups..."
                 emptyMessage="No groups found."
-                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-                contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
+                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-[var(--text)] shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                contentClassName="rounded-xl border border-[var(--border)] shadow-lg"
+                itemClassName="px-4 py-3 text-sm text-[var(--text-muted)] data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-[var(--text)]"
                 disabled={isLoading}
               />
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-[var(--text-quiet)]">
                 Optional. Groups increase cross-board visibility.
               </p>
             </div>
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-slate-900">
+            <label className="text-sm font-medium text-[var(--text)]">
               Description <span className="text-red-500">*</span>
             </label>
             <Textarea
@@ -234,7 +234,7 @@ export default function NewBoardPage() {
         </div>
 
         {gateways.length === 0 ? (
-          <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-600">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-sm text-[var(--text-muted)]">
             <p>
               No gateways available. Create one in{" "}
               <Link

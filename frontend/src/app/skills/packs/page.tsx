@@ -231,7 +231,7 @@ export default function SkillsPacksPage() {
         stickyHeader
       >
         <div className="space-y-6">
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
+          <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-sm">
             <SkillPacksTable
               packs={packs}
               isLoading={packsQuery.isLoading}

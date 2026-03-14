@@ -94,8 +94,8 @@ export function BoardGroupsTable({
             label: row.original.name,
             subtitle: row.original.description ?? "No description",
             subtitleClassName: row.original.description
-              ? "mt-1 line-clamp-2 text-xs text-slate-500"
-              : "mt-1 text-xs text-slate-400",
+              ? "mt-1 line-clamp-2 text-xs text-[var(--text-quiet)]"
+              : "mt-1 text-xs text-[var(--text-quiet)]",
           }),
       },
       {
