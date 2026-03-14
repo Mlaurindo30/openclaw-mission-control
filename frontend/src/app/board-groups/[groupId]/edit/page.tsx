@@ -288,7 +288,7 @@ export default function EditBoardGroupPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
       >
         {assignFailedCount && Number.isFinite(assignFailedCount) ? (
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 shadow-sm">
@@ -344,7 +344,7 @@ export default function EditBoardGroupPage() {
             disabled={isLoading || !baseGroup}
           />
 
-          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-slate-50/40">
+          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-[var(--surface-muted)]/40">
             {boardsLoading && boards.length === 0 ? (
               <div className="px-4 py-6 text-sm text-slate-500">
                 Loading boards…

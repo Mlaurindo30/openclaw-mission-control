@@ -185,7 +185,7 @@ export default function GatewayDetailPage() {
         adminOnlyMessage="Only organization owners and admins can access gateways."
       >
         {gatewayQuery.isLoading ? (
-          <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-500 shadow-sm">
+          <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 text-sm text-slate-500 shadow-sm">
             Loading gateway…
           </div>
         ) : gatewayQuery.error ? (
@@ -195,7 +195,7 @@ export default function GatewayDetailPage() {
         ) : gateway ? (
           <div className="space-y-6">
             <div className="grid gap-6 lg:grid-cols-2">
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                     Connection
@@ -245,7 +245,7 @@ export default function GatewayDetailPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                   Runtime
                 </p>
@@ -280,7 +280,7 @@ export default function GatewayDetailPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                   Agents

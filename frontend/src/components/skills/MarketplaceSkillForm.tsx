@@ -138,7 +138,7 @@ export function MarketplaceSkillForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+      className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
     >
       <div className="space-y-5">
         <div className="space-y-2">

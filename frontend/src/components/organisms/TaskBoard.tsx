@@ -52,7 +52,7 @@ const columns: Array<{
     title: "Inbox",
     status: "inbox",
     dot: "bg-slate-400",
-    accent: "hover:border-slate-400 hover:bg-slate-50",
+    accent: "hover:border-slate-400 hover:bg-[var(--surface-muted)]",
     text: "group-hover:text-slate-700 text-slate-500",
     badge: "bg-slate-100 text-slate-600",
   },
@@ -430,7 +430,7 @@ export const TaskBoard = memo(function TaskBoard({
             onDragOver={readOnly ? undefined : handleDragOver(column.status)}
             onDragLeave={readOnly ? undefined : handleDragLeave(column.status)}
           >
-            <div className="column-header z-10 rounded-t-xl border border-b-0 border-slate-200 bg-white px-4 py-3 sm:sticky sm:top-0 sm:bg-white/80 sm:backdrop-blur">
+            <div className="column-header z-10 rounded-t-xl border border-b-0 border-slate-200 bg-[var(--surface)] px-4 py-3 sm:sticky sm:top-0 sm:bg-[var(--surface)]/80 sm:backdrop-blur">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className={cn("h-2 w-2 rounded-full", column.dot)} />
@@ -477,7 +477,7 @@ export const TaskBoard = memo(function TaskBoard({
                         "rounded-full border px-2.5 py-1 transition",
                         reviewBucket === option.key
                           ? "border-slate-900 bg-slate-900 text-white"
-                          : "border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50",
+                          : "border-slate-200 bg-[var(--surface)] text-slate-600 hover:border-slate-300 hover:bg-[var(--surface-muted)]",
                       )}
                       aria-pressed={reviewBucket === option.key}
                     >
@@ -487,7 +487,7 @@ export const TaskBoard = memo(function TaskBoard({
                 </div>
               ) : null}
             </div>
-            <div className="rounded-b-xl border border-t-0 border-slate-200 bg-white p-3">
+            <div className="rounded-b-xl border border-t-0 border-slate-200 bg-[var(--surface)] p-3">
               <div className="space-y-3">
                 {filteredTasks.map((task) => {
                   const dueState = resolveDueState(task);

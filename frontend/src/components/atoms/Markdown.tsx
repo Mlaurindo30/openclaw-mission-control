@@ -160,7 +160,7 @@ const MARKDOWN_TABLE_COMPONENTS: Components = {
     </div>
   ),
   thead: ({ node: _node, className, ...props }) => (
-    <thead className={cn("bg-slate-50", className)} {...props} />
+    <thead className={cn("bg-[var(--surface-muted)]", className)} {...props} />
   ),
   tbody: ({ node: _node, className, ...props }) => (
     <tbody className={cn("divide-y divide-slate-100", className)} {...props} />

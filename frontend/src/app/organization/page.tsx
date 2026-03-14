@@ -166,7 +166,7 @@ function BoardAccessEditor({
             className={cn(
               "rounded-md px-3 py-1.5 text-xs font-semibold transition",
               scope === "all"
-                ? "bg-white text-slate-900 shadow-sm"
+                ? "bg-[var(--surface)] text-slate-900 shadow-sm"
                 : "text-slate-500 hover:text-slate-700",
             )}
             onClick={() => onScopeChange("all")}
@@ -179,7 +179,7 @@ function BoardAccessEditor({
             className={cn(
               "rounded-md px-3 py-1.5 text-xs font-semibold transition",
               scope === "custom"
-                ? "bg-white text-slate-900 shadow-sm"
+                ? "bg-[var(--surface)] text-slate-900 shadow-sm"
                 : "text-slate-500 hover:text-slate-700",
             )}
             onClick={() => onScopeChange("custom")}
@@ -191,7 +191,7 @@ function BoardAccessEditor({
       </div>
 
       {scope === "all" ? (
-        <div className="flex flex-wrap items-center gap-6 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm">
+        <div className="flex flex-wrap items-center gap-6 rounded-xl border border-slate-200 bg-[var(--surface)] px-4 py-2.5 text-sm">
           <label className="flex items-center gap-2 text-slate-600">
             <input
               type="checkbox"
@@ -219,7 +219,7 @@ function BoardAccessEditor({
       ) : (
         <div>
           {boards.length === 0 ? (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-500">
               {emptyMessage ?? "No boards available yet."}
             </div>
           ) : (
@@ -702,8 +702,8 @@ export default function OrganizationPage() {
       </SignedOut>
       <SignedIn>
         <DashboardSidebar />
-        <main className="flex-1 overflow-y-auto bg-slate-50">
-          <div className="sticky top-0 z-30 border-b border-slate-200 bg-white">
+        <main className="flex-1 overflow-y-auto bg-[var(--surface-muted)]">
+          <div className="sticky top-0 z-30 border-b border-slate-200 bg-[var(--surface)]">
             <div className="px-4 py-4 md:px-8 md:py-6">
               <div className="flex flex-wrap items-center justify-between gap-6">
                 <div>
@@ -776,7 +776,7 @@ export default function OrganizationPage() {
           </div>
 
           <div className="px-4 py-4 md:px-8 md:py-8">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[var(--surface)]">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
                 <div>
                   <h2 className="text-sm font-semibold text-slate-900">
@@ -893,7 +893,7 @@ export default function OrganizationPage() {
               </DialogFooter>
             </form>
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-500">
               Only organization admins can invite new members.
             </div>
           )}
@@ -910,12 +910,12 @@ export default function OrganizationPage() {
           </DialogHeader>
 
           {memberDetailsQuery.isLoading ? (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-500">
               Loading member access...
             </div>
           ) : memberDetailsQuery.data?.status === 200 ? (
             <div className="space-y-6">
-              <div className="rounded-xl border border-slate-200 bg-white px-5 py-4">
+              <div className="rounded-xl border border-slate-200 bg-[var(--surface)] px-5 py-4">
                 <p className="text-sm font-semibold text-slate-900">
                   {memberDetailsQuery.data.data.user?.name ||
                     memberDetailsQuery.data.data.user?.preferred_name ||
@@ -967,7 +967,7 @@ export default function OrganizationPage() {
               ) : null}
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-500">
               Unable to load member access.
             </div>
           )}

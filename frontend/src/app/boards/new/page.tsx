@@ -161,7 +161,7 @@ export default function NewBoardPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
       >
         <div className="space-y-4">
           <div className="grid gap-6 md:grid-cols-2">
@@ -188,9 +188,9 @@ export default function NewBoardPage() {
                 placeholder="Select gateway"
                 searchPlaceholder="Search gateways..."
                 emptyMessage="No gateways found."
-                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
               />
             </div>
           </div>
@@ -208,9 +208,9 @@ export default function NewBoardPage() {
                 placeholder="No group"
                 searchPlaceholder="Search groups..."
                 emptyMessage="No groups found."
-                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                 disabled={isLoading}
               />
               <p className="text-xs text-slate-500">
@@ -234,7 +234,7 @@ export default function NewBoardPage() {
         </div>
 
         {gateways.length === 0 ? (
-          <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+          <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-600">
             <p>
               No gateways available. Create one in{" "}
               <Link

@@ -241,13 +241,13 @@ export function MembersInvitesTable({
       isLoading={isLoading}
       loadingLabel="Loading members..."
       emptyMessage="No members or invites yet."
-      headerClassName="bg-slate-50 text-[11px] uppercase tracking-wide text-slate-500"
+      headerClassName="bg-[var(--surface-muted)] text-[11px] uppercase tracking-wide text-slate-500"
       headerCellClassName="px-5 py-3 text-left font-medium"
       cellClassName="px-5 py-4"
       rowClassName={(row) =>
         row.original.kind === "invite"
-          ? "border-t border-slate-200 bg-slate-50/60"
-          : "border-t border-slate-200 hover:bg-slate-50"
+          ? "border-t border-slate-200 bg-[var(--surface-muted)]/60"
+          : "border-t border-slate-200 hover:bg-[var(--surface-muted)]"
       }
     />
   );

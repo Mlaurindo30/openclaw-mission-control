@@ -93,7 +93,7 @@ export function CustomFieldForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-3xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-6"
+      className="max-w-3xl rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm space-y-6"
     >
       <div>
         <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -290,7 +290,7 @@ export function CustomFieldForm({
             placeholder="Search boards..."
             disabled={isSubmitting}
           />
-          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-slate-50/40">
+          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-[var(--surface-muted)]/40">
             {boardsLoading ? (
               <div className="px-4 py-6 text-sm text-slate-500">
                 Loading boards…

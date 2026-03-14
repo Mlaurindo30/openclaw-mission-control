@@ -81,7 +81,7 @@ export function TagsTable({
           const color = normalizeColor(row.original.color);
           return (
             <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-semibold text-slate-800">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-[var(--surface)] px-2.5 py-1 text-xs font-semibold text-slate-800">
                 <span
                   className="h-2 w-2 rounded-full"
                   style={{ backgroundColor: `#${color}` }}
@@ -149,7 +149,7 @@ export function TagsTable({
       table={table}
       isLoading={isLoading}
       stickyHeader={stickyHeader}
-      rowClassName="transition hover:bg-slate-50"
+      rowClassName="transition hover:bg-[var(--surface-muted)]"
       cellClassName="px-6 py-4 align-top"
       rowActions={
         onEdit || onDelete

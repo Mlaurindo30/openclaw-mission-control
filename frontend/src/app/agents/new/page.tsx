@@ -142,7 +142,7 @@ export default function NewAgentPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-6"
+        className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm space-y-6"
       >
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -191,9 +191,9 @@ export default function NewAgentPage() {
                   placeholder="Select board"
                   searchPlaceholder="Search boards..."
                   emptyMessage="No matching boards."
-                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                   disabled={boards.length === 0}
                 />
                 {boards.length === 0 ? (
@@ -278,7 +278,7 @@ export default function NewAgentPage() {
         </div>
 
         {errorMessage ? (
-          <div className="rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-600 shadow-sm">
+          <div className="rounded-lg border border-slate-200 bg-[var(--surface)] p-3 text-sm text-slate-600 shadow-sm">
             {errorMessage}
           </div>
         ) : null}

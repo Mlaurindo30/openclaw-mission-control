@@ -129,7 +129,7 @@ export function BoardGroupsTable({
       isLoading={isLoading}
       stickyHeader={stickyHeader}
       emptyMessage={emptyMessage}
-      rowClassName="transition hover:bg-slate-50"
+      rowClassName="transition hover:bg-[var(--surface-muted)]"
       cellClassName="px-3 py-3 md:px-6 md:py-4 align-top"
       rowActions={
         showActions

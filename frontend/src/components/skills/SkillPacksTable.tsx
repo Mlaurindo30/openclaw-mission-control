@@ -159,7 +159,7 @@ export function SkillPacksTable({
       table={table}
       isLoading={isLoading}
       stickyHeader={stickyHeader}
-      rowClassName="transition hover:bg-slate-50"
+      rowClassName="transition hover:bg-[var(--surface-muted)]"
       cellClassName="px-6 py-4 align-top"
       rowActions={
         getEditHref || onDelete

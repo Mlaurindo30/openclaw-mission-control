@@ -151,7 +151,7 @@ export default function SettingsPage() {
         description="Update your profile and account preferences."
       >
         <div className="space-y-6">
-          <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <section className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm">
             <h2 className="text-base font-semibold text-slate-900">Profile</h2>
             <p className="mt-1 text-sm text-slate-500">
               Keep your identity and timezone up to date.
@@ -192,9 +192,9 @@ export default function SettingsPage() {
                     searchPlaceholder="Search timezones..."
                     emptyMessage="No matching timezones."
                     disabled={isSaving}
-                    triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                    triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                     contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                    itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                    itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                   />
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function SettingsPage() {
                   value={displayEmail}
                   readOnly
                   disabled
-                  className="border-slate-200 bg-slate-50 text-slate-600"
+                  className="border-slate-200 bg-[var(--surface-muted)] text-slate-600"
                 />
               </div>
 

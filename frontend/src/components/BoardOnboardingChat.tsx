@@ -396,7 +396,7 @@ export function BoardOnboardingChat({
             Review the lead agent draft and confirm.
           </p>
           {isAwaitingAgent ? (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-700">
               <div className="flex items-center gap-2 font-medium text-slate-900">
                 <RefreshCcw className="h-4 w-4 animate-spin text-slate-500" />
                 <span>
@@ -418,7 +418,7 @@ export function BoardOnboardingChat({
               </p>
             </div>
           ) : null}
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm">
+          <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-sm">
             <p className="font-semibold text-slate-900">Objective</p>
             <p className="text-slate-700">{draft.objective || "—"}</p>
             <p className="mt-3 font-semibold text-slate-900">Success metrics</p>
@@ -477,7 +477,7 @@ export function BoardOnboardingChat({
               </>
             ) : null}
           </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-3">
+          <div className="rounded-lg border border-slate-200 bg-[var(--surface)] p-3">
             <div className="flex items-center justify-between gap-2">
               <p className="text-sm font-semibold text-slate-900">
                 Extra context (optional)
@@ -554,7 +554,7 @@ export function BoardOnboardingChat({
             {question.question}
           </p>
           {isAwaitingAgent ? (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+            <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-700">
               <div className="flex items-center gap-2 font-medium text-slate-900">
                 <RefreshCcw className="h-4 w-4 animate-spin text-slate-500" />
                 <span>
@@ -640,7 +640,7 @@ export function BoardOnboardingChat({
           </div>
         </div>
       ) : (
-        <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-600">
+        <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-sm text-slate-600">
           {loading
             ? "Waiting for the lead agent..."
             : "Preparing onboarding..."}

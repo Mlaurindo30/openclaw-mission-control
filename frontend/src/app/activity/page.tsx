@@ -297,7 +297,7 @@ const FeedCard = memo(function FeedCard({
     <div
       id={feedItemElementId(item.id)}
       className={cn(
-        "scroll-mt-28 rounded-xl border bg-white p-4 transition",
+        "scroll-mt-28 rounded-xl border bg-[var(--surface)] p-4 transition",
         isHighlighted
           ? "border-blue-300 ring-2 ring-blue-200"
           : "border-slate-200 hover:border-slate-300",
@@ -1506,8 +1506,8 @@ export default function ActivityPage() {
           </SignedOut>
           <SignedIn>
             <DashboardSidebar />
-            <main className="flex-1 overflow-y-auto bg-slate-50">
-              <div className="sticky top-0 z-30 border-b border-slate-200 bg-white">
+            <main className="flex-1 overflow-y-auto bg-[var(--surface-muted)]">
+              <div className="sticky top-0 z-30 border-b border-slate-200 bg-[var(--surface)]">
                 <div className="px-4 py-4 md:px-8 md:py-6">
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>

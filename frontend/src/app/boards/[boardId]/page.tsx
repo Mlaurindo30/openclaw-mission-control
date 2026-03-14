@@ -597,7 +597,7 @@ const TaskCommentCard = memo(function TaskCommentCard({
     <div
       id={commentElementId(comment.id)}
       className={cn(
-        "scroll-mt-28 rounded-xl border bg-white p-3 transition",
+        "scroll-mt-28 rounded-xl border bg-[var(--surface)] p-3 transition",
         isHighlighted
           ? "border-blue-300 ring-2 ring-blue-200"
           : "border-slate-200",
@@ -629,7 +629,7 @@ const ChatMessageCard = memo(function ChatMessageCard({
 }) {
   const sourceLabel = resolveHumanActorName(message.source, fallbackSource);
   return (
-    <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+    <div className="rounded-2xl border border-slate-200 bg-[var(--surface-muted)]/60 p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm font-semibold text-slate-900">{sourceLabel}</p>
         <span className="text-xs text-slate-400">
@@ -671,7 +671,7 @@ const LiveFeedCard = memo(function LiveFeedCard({
         "rounded-xl border p-3 transition-colors duration-300",
         isNew
           ? "border-blue-200 bg-blue-50/70 shadow-sm hover:border-blue-300 motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 motion-safe:slide-in-from-right-2 motion-safe:duration-300"
-          : "border-slate-200 bg-white hover:border-slate-300",
+          : "border-slate-200 bg-[var(--surface)] hover:border-slate-300",
       )}
     >
       <div className="flex items-start gap-3">
@@ -3100,7 +3100,7 @@ export default function BoardDetailPage() {
             isSidePanelOpen ? "overflow-hidden" : "overflow-y-auto",
           )}
         >
-          <div className="sticky top-0 z-30 border-b border-slate-200 bg-white shadow-sm">
+          <div className="sticky top-0 z-30 border-b border-slate-200 bg-[var(--surface)] shadow-sm">
             <div className="px-4 py-4 md:px-8 md:py-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
@@ -3225,7 +3225,7 @@ export default function BoardDetailPage() {
                     <button
                       type="button"
                       onClick={() => router.push(`/boards/${boardId}/edit`)}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:bg-slate-50"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:bg-[var(--surface-muted)]"
                       aria-label="Board settings"
                       title="Board settings"
                     >
@@ -3239,7 +3239,7 @@ export default function BoardDetailPage() {
 
           <div className="relative flex flex-col gap-4 p-4 md:flex-row md:gap-6 md:p-6">
             {isOrgAdmin ? (
-              <aside className="flex w-full flex-col rounded-xl border border-slate-200 bg-white shadow-sm md:h-full md:w-64">
+              <aside className="flex w-full flex-col rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm md:h-full md:w-64">
                 <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -3252,7 +3252,7 @@ export default function BoardDetailPage() {
                   <button
                     type="button"
                     onClick={() => router.push("/agents/new")}
-                    className="rounded-md border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50"
+                    className="rounded-md border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:bg-[var(--surface-muted)]"
                   >
                     Add
                   </button>
@@ -3270,7 +3270,7 @@ export default function BoardDetailPage() {
                           key={agent.id}
                           type="button"
                           className={cn(
-                            "flex w-full items-center gap-3 rounded-lg border border-transparent px-2 py-2 text-left transition hover:border-slate-200 hover:bg-slate-50",
+                            "flex w-full items-center gap-3 rounded-lg border border-transparent px-2 py-2 text-left transition hover:border-slate-200 hover:bg-[var(--surface-muted)]",
                           )}
                           onClick={() => router.push(`/agents/${agent.id}`)}
                         >
@@ -3303,7 +3303,7 @@ export default function BoardDetailPage() {
 
             <div className="min-w-0 flex-1 space-y-6">
               {error && (
-                <div className="rounded-lg border border-slate-200 bg-white p-3 text-sm text-slate-600 shadow-sm">
+                <div className="rounded-lg border border-slate-200 bg-[var(--surface)] p-3 text-sm text-slate-600 shadow-sm">
                   {error}
                 </div>
               )}
@@ -3323,7 +3323,7 @@ export default function BoardDetailPage() {
                       ) : null}
 
                       {groupSnapshot?.group ? (
-                        <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div className="rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
                           <div className="border-b border-slate-200 px-5 py-4">
                             <div className="flex flex-wrap items-center justify-between gap-3">
                               <div className="min-w-0">
@@ -3374,7 +3374,7 @@ export default function BoardDetailPage() {
                                 {groupSnapshot.boards.map((item) => (
                                   <div
                                     key={item.board.id}
-                                    className="rounded-xl border border-slate-200 bg-slate-50/40 p-4"
+                                    className="rounded-xl border border-slate-200 bg-[var(--surface-muted)]/40 p-4"
                                   >
                                     <button
                                       type="button"
@@ -3398,14 +3398,14 @@ export default function BoardDetailPage() {
                                     </button>
 
                                     <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                                      <span className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-slate-700">
+                                      <span className="rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5 text-slate-700">
                                         Inbox {item.task_counts?.inbox ?? 0}
                                       </span>
-                                      <span className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-slate-700">
+                                      <span className="rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5 text-slate-700">
                                         In progress{" "}
                                         {item.task_counts?.in_progress ?? 0}
                                       </span>
-                                      <span className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-slate-700">
+                                      <span className="rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5 text-slate-700">
                                         Review {item.task_counts?.review ?? 0}
                                       </span>
                                     </div>
@@ -3415,7 +3415,7 @@ export default function BoardDetailPage() {
                                         {item.tasks.slice(0, 3).map((task) => (
                                           <li
                                             key={task.id}
-                                            className="rounded-lg border border-slate-200 bg-white p-3"
+                                            className="rounded-lg border border-slate-200 bg-[var(--surface)] p-3"
                                           >
                                             <div className="flex flex-wrap items-center justify-between gap-2">
                                               <div className="flex min-w-0 items-center gap-2">
@@ -3465,7 +3465,7 @@ export default function BoardDetailPage() {
                                                   .map((tag) => (
                                                     <span
                                                       key={tag.id}
-                                                      className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-slate-700"
+                                                      className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5 text-[10px] font-semibold text-slate-700"
                                                     >
                                                       <span
                                                         className="h-1.5 w-1.5 rounded-full"
@@ -3504,7 +3504,7 @@ export default function BoardDetailPage() {
                           </div>
                         </div>
                       ) : groupSnapshot ? (
-                        <div className="rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600 shadow-sm">
+                        <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-4 text-sm text-slate-600 shadow-sm">
                           <p className="font-semibold text-slate-900">
                             No board group configured
                           </p>
@@ -3544,7 +3544,7 @@ export default function BoardDetailPage() {
                       readOnly={!canWrite}
                     />
                   ) : (
-                    <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+                    <div className="rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
                       <div className="border-b border-slate-200 px-5 py-4">
                         <div className="flex items-center justify-between">
                           <div>
@@ -3576,7 +3576,7 @@ export default function BoardDetailPage() {
                             <button
                               key={task.id}
                               type="button"
-                              className="w-full px-5 py-4 text-left transition hover:bg-slate-50"
+                              className="w-full px-5 py-4 text-left transition hover:bg-[var(--surface-muted)]"
                               onClick={() => openComments(task)}
                             >
                               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -3622,7 +3622,7 @@ export default function BoardDetailPage() {
                                       {task.tags.slice(0, 2).map((tag) => (
                                         <span
                                           key={tag.id}
-                                          className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-slate-700"
+                                          className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5 text-[10px] font-semibold text-slate-700"
                                         >
                                           <span
                                             className="h-1.5 w-1.5 rounded-full"
@@ -3680,7 +3680,7 @@ export default function BoardDetailPage() {
       ) : null}
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-full max-w-[99vw] transform bg-white shadow-2xl transition-transform md:w-[max(760px,45vw)]",
+          "fixed right-0 top-0 z-50 h-full w-full max-w-[99vw] transform bg-[var(--surface)] shadow-2xl transition-transform md:w-[max(760px,45vw)]",
           isDetailOpen ? "transform-none" : "translate-x-full",
         )}
       >
@@ -3698,7 +3698,7 @@ export default function BoardDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsEditDialogOpen(true)}
-                className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+                className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
                 disabled={!selectedTask || !canWrite}
                 title={canWrite ? "Edit task" : "Read-only access"}
               >
@@ -3707,7 +3707,7 @@ export default function BoardDetailPage() {
               <button
                 type="button"
                 onClick={closeComments}
-                className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+                className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -3738,7 +3738,7 @@ export default function BoardDetailPage() {
               {customFieldDefinitionsQuery.isLoading ? (
                 <p className="text-sm text-slate-500">Loading custom fields…</p>
               ) : boardCustomFieldDefinitions.length > 0 ? (
-                <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3">
                   <dl className="space-y-2">
                     {boardCustomFieldDefinitions.map((definition) => {
                       const value =
@@ -3778,7 +3778,7 @@ export default function BoardDetailPage() {
                   {selectedTask.tags.map((tag) => (
                     <span
                       key={tag.id}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-semibold text-slate-700"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-[var(--surface)] px-2.5 py-1 text-xs font-semibold text-slate-700"
                     >
                       <span
                         className="h-2 w-2 rounded-full"
@@ -3850,7 +3850,7 @@ export default function BoardDetailPage() {
                 </Button>
               </div>
               {approvalsError ? (
-                <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-500">
+                <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-xs text-slate-500">
                   {approvalsError}
                 </div>
               ) : isApprovalsLoading ? (
@@ -3867,7 +3867,7 @@ export default function BoardDetailPage() {
                   {taskApprovals.map((approval) => (
                     <div
                       key={approval.id}
-                      className="rounded-xl border border-slate-200 bg-white p-3"
+                      className="rounded-xl border border-slate-200 bg-[var(--surface)] p-3"
                     >
                       <div className="flex flex-wrap items-start justify-between gap-2 text-xs text-slate-500">
                         <div>
@@ -3941,7 +3941,7 @@ export default function BoardDetailPage() {
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 Comments
               </p>
-              <div className="space-y-2 rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <div className="space-y-2 rounded-xl border border-slate-200 bg-[var(--surface-muted)] p-3">
                 <BoardChatComposer
                   placeholder={
                     canWrite
@@ -3965,7 +3965,7 @@ export default function BoardDetailPage() {
               {isCommentsLoading ? (
                 <p className="text-sm text-slate-500">Loading comments…</p>
               ) : commentsError ? (
-                <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-500">
+                <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-xs text-slate-500">
                   {commentsError}
                 </div>
               ) : comments.length === 0 ? (
@@ -3993,7 +3993,7 @@ export default function BoardDetailPage() {
 
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-full max-w-[96vw] transform border-l border-slate-200 bg-white shadow-2xl transition-transform md:w-[560px]",
+          "fixed right-0 top-0 z-50 h-full w-full max-w-[96vw] transform border-l border-slate-200 bg-[var(--surface)] shadow-2xl transition-transform md:w-[560px]",
           isChatOpen ? "transform-none" : "translate-x-full",
         )}
       >
@@ -4010,14 +4010,14 @@ export default function BoardDetailPage() {
             <button
               type="button"
               onClick={closeBoardChat}
-              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
               aria-label="Close board chat"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
           <div className="flex flex-1 flex-col overflow-hidden px-6 py-4">
-            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-[var(--surface)] p-4">
               {chatError ? (
                 <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
                   {chatError}
@@ -4055,7 +4055,7 @@ export default function BoardDetailPage() {
 
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-full max-w-[96vw] transform border-l border-slate-200 bg-white shadow-2xl transition-transform md:w-[520px]",
+          "fixed right-0 top-0 z-50 h-full w-full max-w-[96vw] transform border-l border-slate-200 bg-[var(--surface)] shadow-2xl transition-transform md:w-[520px]",
           isLiveFeedOpen ? "transform-none" : "translate-x-full",
         )}
       >
@@ -4072,7 +4072,7 @@ export default function BoardDetailPage() {
             <button
               type="button"
               onClick={closeLiveFeed}
-              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
               aria-label="Close live feed"
             >
               <X className="h-4 w-4" />
@@ -4082,7 +4082,7 @@ export default function BoardDetailPage() {
             {isLiveFeedHistoryLoading && orderedLiveFeed.length === 0 ? (
               <p className="text-sm text-slate-500">Loading feed…</p>
             ) : liveFeedHistoryError ? (
-              <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm">
+              <div className="rounded-lg border border-slate-200 bg-[var(--surface)] p-4 text-sm text-slate-700 shadow-sm">
                 {liveFeedHistoryError}
               </div>
             ) : orderedLiveFeed.length === 0 ? (
@@ -4296,7 +4296,7 @@ export default function BoardDetailPage() {
                     return (
                       <span
                         key={tagId}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-[var(--surface-muted)] px-3 py-1 text-xs text-slate-700"
                       >
                         <span
                           className="h-1.5 w-1.5 rounded-full"
@@ -4309,7 +4309,7 @@ export default function BoardDetailPage() {
                           className={cn(
                             "rounded-full p-0.5 text-slate-500 transition",
                             canWrite
-                              ? "hover:bg-white hover:text-slate-700"
+                              ? "hover:bg-[var(--surface)] hover:text-slate-700"
                               : "opacity-50 cursor-not-allowed",
                           )}
                           aria-label="Remove tag"
@@ -4366,7 +4366,7 @@ export default function BoardDetailPage() {
                           "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs",
                           isDone
                             ? "border-emerald-200 bg-emerald-50 text-emerald-800"
-                            : "border-slate-200 bg-slate-50 text-slate-700",
+                            : "border-slate-200 bg-[var(--surface-muted)] text-slate-700",
                         )}
                       >
                         <span className="max-w-[18rem] truncate">{label}</span>
@@ -4382,7 +4382,7 @@ export default function BoardDetailPage() {
                             className={cn(
                               "rounded-full p-0.5 text-slate-500 transition",
                               canWrite
-                                ? "hover:bg-white hover:text-slate-700"
+                                ? "hover:bg-[var(--surface)] hover:text-slate-700"
                                 : "opacity-50 cursor-not-allowed",
                             )}
                             aria-label="Remove dependency"
@@ -4398,7 +4398,7 @@ export default function BoardDetailPage() {
               )}
             </div>
             {saveTaskError ? (
-              <div className="rounded-lg border border-slate-200 bg-white p-3 text-xs text-slate-600">
+              <div className="rounded-lg border border-slate-200 bg-[var(--surface)] p-3 text-xs text-slate-600">
                 {saveTaskError}
               </div>
             ) : null}
@@ -4575,7 +4575,7 @@ export default function BoardDetailPage() {
                     return (
                       <span
                         key={tagId}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-[var(--surface-muted)] px-3 py-1 text-xs text-slate-700"
                       >
                         <span
                           className="h-1.5 w-1.5 rounded-full"
@@ -4585,7 +4585,7 @@ export default function BoardDetailPage() {
                         <button
                           type="button"
                           onClick={() => removeCreateTag(tagId)}
-                          className="rounded-full p-0.5 text-slate-500 transition hover:bg-white hover:text-slate-700"
+                          className="rounded-full p-0.5 text-slate-500 transition hover:bg-[var(--surface)] hover:text-slate-700"
                           aria-label="Remove tag"
                           disabled={!canWrite || isCreating}
                         >
@@ -4649,7 +4649,7 @@ export default function BoardDetailPage() {
               </div>
             ) : null}
 
-            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700">
+            <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-sm text-slate-700">
               <p className="font-semibold text-slate-900">What happens</p>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
@@ -4694,7 +4694,7 @@ export default function BoardDetailPage() {
             <div
               key={toast.id}
               className={cn(
-                "rounded-xl border bg-white px-4 py-3 text-sm shadow-lush",
+                "rounded-xl border bg-[var(--surface)] px-4 py-3 text-sm shadow-lush",
                 toast.tone === "error"
                   ? "border-rose-200 text-rose-700"
                   : "border-emerald-200 text-emerald-700",

@@ -71,7 +71,7 @@ const statusTone = (value?: string | null) => {
     case "review":
       return "bg-amber-50 text-amber-800 border-amber-200";
     case "done":
-      return "bg-slate-50 text-slate-600 border-slate-200";
+      return "bg-[var(--surface-muted)] text-slate-600 border-slate-200";
     default:
       return "bg-blue-50 text-blue-700 border-blue-200";
   }
@@ -82,7 +82,7 @@ const priorityTone = (value?: string | null) => {
     case "high":
       return "bg-rose-50 text-rose-700 border-rose-200";
     case "low":
-      return "bg-slate-50 text-slate-600 border-slate-200";
+      return "bg-[var(--surface-muted)] text-slate-600 border-slate-200";
     default:
       return "bg-indigo-50 text-indigo-700 border-indigo-200";
   }
@@ -105,7 +105,7 @@ const canWriteGroupBoards = (
 
 function GroupChatMessageCard({ message }: { message: BoardGroupMemoryRead }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+    <div className="rounded-2xl border border-slate-200 bg-[var(--surface-muted)]/60 p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm font-semibold text-slate-900">
           {message.source ?? "User"}
@@ -122,7 +122,7 @@ function GroupChatMessageCard({ message }: { message: BoardGroupMemoryRead }) {
           {message.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-slate-200 bg-white px-2 py-0.5"
+              className="rounded-full border border-slate-200 bg-[var(--surface)] px-2 py-0.5"
             >
               {tag}
             </span>
@@ -742,8 +742,8 @@ export default function BoardGroupDetailPage() {
       </SignedOut>
       <SignedIn>
         <DashboardSidebar />
-        <main className="flex-1 overflow-y-auto bg-slate-50">
-          <div className="sticky top-0 z-30 border-b border-slate-200 bg-white shadow-sm">
+        <main className="flex-1 overflow-y-auto bg-[var(--surface-muted)]">
+          <div className="sticky top-0 z-30 border-b border-slate-200 bg-[var(--surface)] shadow-sm">
             <div className="px-4 py-4 md:px-8 md:py-6">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div className="min-w-0">
@@ -828,7 +828,7 @@ export default function BoardGroupDetailPage() {
                 </label>
                 <div className="flex items-center gap-2 text-sm text-slate-700">
                   <span className="text-slate-500">Top tasks per board</span>
-                  <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-white p-1">
+                  <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-[var(--surface)] p-1">
                     {[0, 3, 5, 10].map((value) => (
                       <button
                         key={value}
@@ -849,7 +849,7 @@ export default function BoardGroupDetailPage() {
 
                 <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
                   <span className="text-slate-500">Agent pace</span>
-                  <div className="flex flex-wrap items-center gap-1 rounded-lg border border-slate-200 bg-white p-1">
+                  <div className="flex flex-wrap items-center gap-1 rounded-lg border border-slate-200 bg-[var(--surface)] p-1">
                     {HEARTBEAT_PRESETS.map((preset) => {
                       const value = `${preset.amount}${preset.unit}`;
                       return (
@@ -879,7 +879,7 @@ export default function BoardGroupDetailPage() {
                     value={heartbeatAmount}
                     onChange={(event) => setHeartbeatAmount(event.target.value)}
                     className={cn(
-                      "h-8 w-20 rounded-md border bg-white px-2 text-xs text-slate-900 shadow-sm",
+                      "h-8 w-20 rounded-md border bg-[var(--surface)] px-2 text-xs text-slate-900 shadow-sm",
                       heartbeatEvery
                         ? "border-slate-200"
                         : "border-rose-300 focus:border-rose-400 focus:ring-2 focus:ring-rose-100",
@@ -898,7 +898,7 @@ export default function BoardGroupDetailPage() {
                       setHeartbeatUnit(event.target.value as HeartbeatUnit)
                     }
                     className={cn(
-                      "h-8 rounded-md border border-slate-200 bg-white px-2 text-xs text-slate-900 shadow-sm",
+                      "h-8 rounded-md border border-slate-200 bg-[var(--surface)] px-2 text-xs text-slate-900 shadow-sm",
                       !canManageHeartbeat && "opacity-60 cursor-not-allowed",
                     )}
                     disabled={!canManageHeartbeat}
@@ -956,7 +956,7 @@ export default function BoardGroupDetailPage() {
                 </div>
               ) : null}
               {heartbeatApplyResult ? (
-                <div className="rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-4 text-sm text-slate-700 shadow-sm">
                   <p className="font-semibold text-slate-900">
                     Heartbeat applied
                   </p>
@@ -969,7 +969,7 @@ export default function BoardGroupDetailPage() {
               ) : null}
 
               {snapshotQuery.isLoading ? (
-                <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 text-sm text-slate-600 shadow-sm">
                   Loading group snapshot…
                 </div>
               ) : snapshotQuery.error ? (
@@ -977,7 +977,7 @@ export default function BoardGroupDetailPage() {
                   {snapshotQuery.error.message}
                 </div>
               ) : boards.length === 0 ? (
-                <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 shadow-sm">
+                <div className="rounded-xl border border-slate-200 bg-[var(--surface)] p-6 text-sm text-slate-600 shadow-sm">
                   No boards in this group yet. Assign boards from the board
                   settings page.
                 </div>
@@ -986,7 +986,7 @@ export default function BoardGroupDetailPage() {
                   {boards.map((item) => (
                     <div
                       key={item.board.id}
-                      className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+                      className="overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm"
                     >
                       <div className="border-b border-slate-200 px-6 py-4">
                         <div className="flex items-start justify-between gap-4">
@@ -1006,7 +1006,7 @@ export default function BoardGroupDetailPage() {
                             </p>
                           </div>
                           <div className="flex flex-wrap items-center justify-end gap-2 text-xs">
-                            <span className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-slate-700">
+                            <span className="rounded-full border border-slate-200 bg-[var(--surface-muted)] px-2 py-0.5 text-slate-700">
                               Inbox {safeCount(item, "inbox")}
                             </span>
                             <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-emerald-800">
@@ -1029,7 +1029,7 @@ export default function BoardGroupDetailPage() {
                                     pathname: `/boards/${item.board.id}`,
                                     query: { taskId: task.id },
                                   }}
-                                  className="block rounded-lg border border-slate-200 bg-slate-50/40 p-3 transition hover:border-blue-200 hover:bg-blue-50/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                  className="block rounded-lg border border-slate-200 bg-[var(--surface-muted)]/40 p-3 transition hover:border-blue-200 hover:bg-blue-50/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                   title="Open task on board"
                                 >
                                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1100,7 +1100,7 @@ export default function BoardGroupDetailPage() {
       ) : null}
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-[560px] max-w-[96vw] transform border-l border-slate-200 bg-white shadow-2xl transition-transform",
+          "fixed right-0 top-0 z-50 h-full w-[560px] max-w-[96vw] transform border-l border-slate-200 bg-[var(--surface)] shadow-2xl transition-transform",
           isChatOpen ? "transform-none" : "translate-x-full",
         )}
       >
@@ -1120,7 +1120,7 @@ export default function BoardGroupDetailPage() {
                 setIsChatOpen(false);
                 setChatError(null);
               }}
-              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
               aria-label="Close group chat"
             >
               <X className="h-4 w-4" />
@@ -1145,7 +1145,7 @@ export default function BoardGroupDetailPage() {
               </p>
             </div>
 
-            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-[var(--surface)] p-4">
               {chatHistoryQuery.error ? (
                 <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
                   {chatHistoryQuery.error.message}
@@ -1187,7 +1187,7 @@ export default function BoardGroupDetailPage() {
       </aside>
       <aside
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-[560px] max-w-[96vw] transform border-l border-slate-200 bg-white shadow-2xl transition-transform",
+          "fixed right-0 top-0 z-50 h-full w-[560px] max-w-[96vw] transform border-l border-slate-200 bg-[var(--surface)] shadow-2xl transition-transform",
           isNotesOpen ? "transform-none" : "translate-x-full",
         )}
       >
@@ -1207,7 +1207,7 @@ export default function BoardGroupDetailPage() {
                 setIsNotesOpen(false);
                 setNoteSendError(null);
               }}
-              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-slate-50"
+              className="rounded-lg border border-slate-200 p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
               aria-label="Close group notes"
             >
               <X className="h-4 w-4" />
@@ -1232,7 +1232,7 @@ export default function BoardGroupDetailPage() {
               </p>
             </div>
 
-            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="flex-1 space-y-4 overflow-y-auto rounded-2xl border border-slate-200 bg-[var(--surface)] p-4">
               {notesHistoryQuery.error ? (
                 <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
                   {notesHistoryQuery.error.message}

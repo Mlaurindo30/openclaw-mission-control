@@ -558,7 +558,7 @@ export function BoardApprovalsPanel({
       ) : pendingCount === 0 && resolvedCount === 0 ? (
         <div
           className={cn(
-            "rounded-xl border border-dashed border-slate-200 bg-white px-6 py-10 text-center",
+            "rounded-xl border border-dashed border-slate-200 bg-[var(--surface)] px-6 py-10 text-center",
             scrollable && "flex h-full items-center justify-center",
           )}
         >
@@ -584,11 +584,11 @@ export function BoardApprovalsPanel({
         >
           <div
             className={cn(
-              "overflow-hidden rounded-xl border border-slate-200 bg-white",
+              "overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)]",
               scrollable && "flex min-h-0 flex-col",
             )}
           >
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
+            <div className="border-b border-slate-200 bg-[var(--surface-muted)] px-4 py-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Unapproved tasks
               </p>
@@ -632,7 +632,7 @@ export function BoardApprovalsPanel({
                     type="button"
                     onClick={() => setSelectedId(approval.id)}
                     className={cn(
-                      "w-full px-4 py-4 text-left transition hover:bg-slate-50",
+                      "w-full px-4 py-4 text-left transition hover:bg-[var(--surface-muted)]",
                       isSelected && "bg-amber-50 border-l-2 border-amber-500",
                       !isPending && "opacity-60",
                     )}
@@ -673,11 +673,11 @@ export function BoardApprovalsPanel({
 
           <div
             className={cn(
-              "overflow-hidden rounded-xl border border-slate-200 bg-white",
+              "overflow-hidden rounded-xl border border-slate-200 bg-[var(--surface)]",
               scrollable && "flex min-h-0 flex-col",
             )}
           >
-            <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
+            <div className="border-b border-slate-200 bg-[var(--surface-muted)] px-4 py-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 {selectedApproval?.status === "pending"
                   ? "Latest unapproved task"
@@ -801,7 +801,7 @@ export function BoardApprovalsPanel({
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+                    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-[var(--surface-muted)] px-4 py-3">
                       <StatusDot
                         status={selectedApproval.status}
                         variant="approval"
@@ -836,7 +836,7 @@ export function BoardApprovalsPanel({
                         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                           Description
                         </p>
-                        <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+                        <div className="rounded-lg border border-slate-200 bg-[var(--surface)] px-4 py-3 text-sm text-slate-700">
                           {descriptionText}
                         </div>
                       </div>
@@ -847,7 +847,7 @@ export function BoardApprovalsPanel({
                         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                           Lead reasoning
                         </p>
-                        <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600">
+                        <div className="rounded-lg border border-slate-200 bg-[var(--surface)] px-4 py-3 text-sm text-slate-600">
                           <p>{reasoningText}</p>
                         </div>
                       </div>
@@ -866,7 +866,7 @@ export function BoardApprovalsPanel({
                                 selectedApproval.board_id,
                                 task.id,
                               )}
-                              className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs text-slate-700 underline-offset-2 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 hover:underline"
+                              className="rounded-md border border-slate-200 bg-[var(--surface)] px-2 py-1 text-xs text-slate-700 underline-offset-2 transition hover:border-slate-300 hover:bg-[var(--surface-muted)] hover:text-slate-900 hover:underline"
                             >
                               {task.title}
                             </Link>
@@ -884,7 +884,7 @@ export function BoardApprovalsPanel({
                           {extraRows.map((row) => (
                             <div
                               key={`${selectedApproval.id}-${row.label}`}
-                              className="rounded-lg border border-slate-200 bg-white px-3 py-2"
+                              className="rounded-lg border border-slate-200 bg-[var(--surface)] px-3 py-2"
                             >
                               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                                 {row.label}

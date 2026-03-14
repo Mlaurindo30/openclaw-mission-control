@@ -111,7 +111,7 @@ export default function WebhookPayloadsPage() {
       isAdmin={isAdmin}
       adminOnlyMessage="Only organization owners and admins can view webhook payloads."
     >
-      <div className="space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="space-y-4 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="space-y-1">
             <h2 className="text-base font-semibold text-slate-900">
@@ -131,7 +131,7 @@ export default function WebhookPayloadsPage() {
         </div>
 
         {webhook ? (
-          <div className="rounded-md bg-slate-50 px-3 py-2">
+          <div className="rounded-md bg-[var(--surface-muted)] px-3 py-2">
             <code className="break-all text-xs text-slate-700">
               {webhook.endpoint_url ?? webhook.endpoint_path}
             </code>

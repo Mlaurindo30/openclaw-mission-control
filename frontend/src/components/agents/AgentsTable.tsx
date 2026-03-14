@@ -186,7 +186,7 @@ export function AgentsTable({
             }
           : undefined
       }
-      rowClassName="hover:bg-slate-50"
+      rowClassName="hover:bg-[var(--surface-muted)]"
       cellClassName="px-6 py-4"
       emptyState={
         emptyState

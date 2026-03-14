@@ -60,7 +60,7 @@ export function GatewayForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+      className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
     >
       <div className="space-y-2">
         <label className="text-sm font-medium text-slate-900">
@@ -141,7 +141,7 @@ export function GatewayForm({
               } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
             >
               <span
-                className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                   disableDevicePairing ? "translate-x-5" : "translate-x-0.5"
                 }`}
               />
@@ -169,7 +169,7 @@ export function GatewayForm({
             } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
           >
             <span
-              className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+              className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                 allowInsecureTls ? "translate-x-5" : "translate-x-0.5"
               }`}
             />

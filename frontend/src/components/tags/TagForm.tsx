@@ -101,10 +101,10 @@ export function TagForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+      className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
     >
       <div className="space-y-5">
-        <div className="rounded-xl border border-slate-200 bg-slate-50/40 p-4">
+        <div className="rounded-xl border border-slate-200 bg-[var(--surface-muted)]/40 p-4">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <label className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -149,7 +149,7 @@ export function TagForm({
             <label className="text-xs font-semibold uppercase tracking-wider text-slate-500">
               Color
             </label>
-            <div className="flex items-center rounded-lg border border-slate-200 bg-white px-3">
+            <div className="flex items-center rounded-lg border border-slate-200 bg-[var(--surface)] px-3">
               <span className="text-sm font-medium text-slate-400">#</span>
               <Input
                 value={color}
@@ -164,7 +164,7 @@ export function TagForm({
             <label className="text-xs font-semibold uppercase tracking-wider text-slate-500">
               Preview
             </label>
-            <div className="inline-flex h-[42px] items-center gap-2 rounded-lg border border-slate-200 bg-white px-3">
+            <div className="inline-flex h-[42px] items-center gap-2 rounded-lg border border-slate-200 bg-[var(--surface)] px-3">
               <span
                 className="h-4 w-4 rounded border border-slate-300"
                 style={{ backgroundColor: `#${previewColor}` }}

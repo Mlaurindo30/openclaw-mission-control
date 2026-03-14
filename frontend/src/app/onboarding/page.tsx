@@ -115,7 +115,7 @@ export default function OnboardingPage() {
     <DashboardShell>
       <SignedOut>
         <div className="lg:col-span-2 flex min-h-[70vh] items-center justify-center">
-          <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="w-full max-w-2xl rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
             <div className="border-b border-slate-100 px-6 py-5">
               <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
                 Mission Control profile
@@ -138,7 +138,7 @@ export default function OnboardingPage() {
       </SignedOut>
       <SignedIn>
         <div className="lg:col-span-2 flex min-h-[70vh] items-center justify-center">
-          <section className="w-full max-w-2xl rounded-xl border border-slate-200 bg-white shadow-sm">
+          <section className="w-full max-w-2xl rounded-xl border border-slate-200 bg-[var(--surface)] shadow-sm">
             <div className="border-b border-slate-100 px-6 py-5">
               <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
                 Mission Control profile
@@ -178,9 +178,9 @@ export default function OnboardingPage() {
                       placeholder="Select timezone"
                       searchPlaceholder="Search timezones..."
                       emptyMessage="No matching timezones."
-                      triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                      triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                       contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                      itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                      itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                     />
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function OnboardingPage() {
                 </div>
 
                 {errorMessage ? (
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600">
+                  <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-xs text-slate-600">
                     {errorMessage}
                   </div>
                 ) : null}
@@ -215,7 +215,7 @@ export default function OnboardingPage() {
                       setTimezone("");
                       setError(null);
                     }}
-                    className="flex-1 rounded-md border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+                    className="flex-1 rounded-md border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--surface-muted)]"
                   >
                     <span className="inline-flex items-center gap-2">
                       <RotateCcw className="h-4 w-4" />

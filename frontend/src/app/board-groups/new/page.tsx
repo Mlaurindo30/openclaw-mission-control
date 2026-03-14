@@ -133,7 +133,7 @@ export default function NewBoardGroupPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
       >
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
@@ -175,7 +175,7 @@ export default function NewBoardGroupPage() {
             placeholder="Search boards..."
             disabled={isCreating}
           />
-          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-slate-50/40">
+          <div className="max-h-64 overflow-auto rounded-xl border border-slate-200 bg-[var(--surface-muted)]/40">
             {boardsQuery.isLoading ? (
               <div className="px-4 py-6 text-sm text-slate-500">
                 Loading boards…

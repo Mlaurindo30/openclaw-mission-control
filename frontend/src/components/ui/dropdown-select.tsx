@@ -137,8 +137,8 @@ export default function DropdownSelect({
           aria-haspopup="listbox"
           disabled={disabled}
           className={cn(
-            "inline-flex h-10 w-auto cursor-pointer items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50",
-            open && "bg-slate-50",
+            "inline-flex h-10 w-auto cursor-pointer items-center justify-between gap-2 rounded-md border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm transition-colors hover:bg-[var(--surface-muted)] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50",
+            open && "bg-[var(--surface-muted)]",
             triggerClassName,
           )}
         >
@@ -169,7 +169,7 @@ export default function DropdownSelect({
         align="start"
         sideOffset={6}
         className={cn(
-          "w-[var(--radix-popover-trigger-width)] min-w-[12rem] overflow-hidden rounded-md border border-slate-200 bg-white p-0 text-slate-900 shadow-lg",
+          "w-[var(--radix-popover-trigger-width)] min-w-[12rem] overflow-hidden rounded-md border border-slate-200 bg-[var(--surface)] p-0 text-slate-900 shadow-lg",
           contentClassName,
         )}
       >
@@ -198,9 +198,9 @@ export default function DropdownSelect({
                   disabled={option.disabled}
                   onSelect={handleSelect}
                   className={cn(
-                    "flex items-center justify-between gap-2 rounded-lg px-4 py-3 text-sm text-gray-700 transition-colors data-[selected=true]:bg-gray-50 data-[selected=true]:text-gray-900",
+                    "flex items-center justify-between gap-2 rounded-lg px-4 py-3 text-sm text-gray-700 transition-colors data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-gray-900",
                     isSelected && "font-semibold",
-                    !isSelected && "hover:bg-gray-50",
+                    !isSelected && "hover:bg-[var(--surface-muted)]",
                     itemClassName,
                   )}
                 >

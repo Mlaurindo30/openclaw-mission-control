@@ -42,7 +42,7 @@ export function TableEmptyStateRow({
     <tr>
       <td colSpan={colSpan} className="px-6 py-16">
         <div className="flex flex-col items-center justify-center text-center">
-          <div className="mb-4 rounded-full bg-slate-50 p-4">{icon}</div>
+          <div className="mb-4 rounded-full bg-[var(--surface-muted)] p-4">{icon}</div>
           <h3 className="mb-2 text-lg font-semibold text-slate-900">{title}</h3>
           <p className="mb-6 max-w-md text-sm text-slate-500">{description}</p>
           {actionHref && actionLabel ? (

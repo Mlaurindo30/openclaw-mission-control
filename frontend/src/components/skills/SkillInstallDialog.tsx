@@ -67,7 +67,7 @@ export function SkillInstallDialog({
               return (
                 <div
                   key={gateway.id}
-                  className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4"
+                  className="flex items-center justify-between rounded-xl border border-slate-200 bg-[var(--surface)] p-4"
                 >
                   <div>
                     <p className="text-sm font-medium text-slate-900">

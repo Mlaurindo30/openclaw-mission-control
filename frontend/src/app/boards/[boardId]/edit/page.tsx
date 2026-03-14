@@ -254,7 +254,7 @@ function WebhookCard({
           </p>
         </>
       )}
-      <div className="rounded-md bg-slate-50 px-3 py-2">
+      <div className="rounded-md bg-[var(--surface-muted)] px-3 py-2">
         <code className="break-all text-xs text-slate-700">
           {webhook.endpoint_url ?? webhook.endpoint_path}
         </code>
@@ -769,7 +769,7 @@ export default function EditBoardPage() {
         <div className="space-y-6">
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="space-y-6 rounded-xl border border-slate-200 bg-[var(--surface)] p-6 shadow-sm"
           >
             {resolvedBoardType !== "general" &&
             baseBoard &&
@@ -817,9 +817,9 @@ export default function EditBoardPage() {
                   placeholder="Select gateway"
                   searchPlaceholder="Search gateways..."
                   emptyMessage="No gateways found."
-                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                 />
               </div>
             </div>
@@ -871,9 +871,9 @@ export default function EditBoardPage() {
                   placeholder="No group"
                   searchPlaceholder="Search groups..."
                   emptyMessage="No groups found."
-                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                  triggerClassName="w-full h-11 rounded-xl border border-slate-300 bg-[var(--surface)] px-3 py-2 text-sm font-medium text-slate-900 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   contentClassName="rounded-xl border border-slate-200 shadow-lg"
-                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-slate-50 data-[selected=true]:text-slate-900"
+                  itemClassName="px-4 py-3 text-sm text-slate-700 data-[selected=true]:bg-[var(--surface-muted)] data-[selected=true]:text-slate-900"
                   disabled={isLoading}
                 />
                 <p className="text-xs text-slate-500">
@@ -971,7 +971,7 @@ export default function EditBoardPage() {
                   } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span
-                    className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                    className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                       resolvedRequireApprovalForDone
                         ? "translate-x-5"
                         : "translate-x-0.5"
@@ -1006,7 +1006,7 @@ export default function EditBoardPage() {
                   } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span
-                    className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                    className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                       resolvedRequireReviewBeforeDone
                         ? "translate-x-5"
                         : "translate-x-0.5"
@@ -1042,7 +1042,7 @@ export default function EditBoardPage() {
                   } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span
-                    className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                    className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                       resolvedCommentRequiredForReview
                         ? "translate-x-5"
                         : "translate-x-0.5"
@@ -1078,7 +1078,7 @@ export default function EditBoardPage() {
                   } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span
-                    className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                    className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                       resolvedBlockStatusChangesWithPendingApproval
                         ? "translate-x-5"
                         : "translate-x-0.5"
@@ -1112,7 +1112,7 @@ export default function EditBoardPage() {
                   } ${isLoading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span
-                    className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition ${
+                    className={`inline-block h-5 w-5 rounded-full bg-[var(--surface)] shadow-sm transition ${
                       resolvedOnlyLeadCanChangeStatus
                         ? "translate-x-5"
                         : "translate-x-0.5"
@@ -1131,7 +1131,7 @@ export default function EditBoardPage() {
             </section>
 
             {gateways.length === 0 ? (
-              <div className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+              <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] px-4 py-3 text-sm text-slate-600">
                 <p>
                   No gateways available. Create one in Gateways to continue.
                 </p>
@@ -1275,7 +1275,7 @@ export default function EditBoardPage() {
             <DialogClose asChild>
               <button
                 type="button"
-                className="sticky top-4 z-10 ml-auto rounded-lg border border-slate-200 bg-[color:var(--surface)] p-2 text-slate-500 transition hover:bg-slate-50"
+                className="sticky top-4 z-10 ml-auto rounded-lg border border-slate-200 bg-[color:var(--surface)] p-2 text-slate-500 transition hover:bg-[var(--surface-muted)]"
                 aria-label="Close onboarding"
               >
                 <X className="h-4 w-4" />
@@ -1288,7 +1288,7 @@ export default function EditBoardPage() {
               onConfirmed={handleOnboardingConfirmed}
             />
           ) : (
-            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-600">
+            <div className="rounded-lg border border-slate-200 bg-[var(--surface-muted)] p-3 text-sm text-slate-600">
               Unable to start onboarding.
             </div>
           )}
