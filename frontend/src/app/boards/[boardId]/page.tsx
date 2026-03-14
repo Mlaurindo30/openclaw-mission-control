@@ -3096,7 +3096,7 @@ export default function BoardDetailPage() {
         <DashboardSidebar />
         <main
           className={cn(
-            "flex-1 bg-gradient-to-br from-slate-50 to-slate-100",
+            "flex-1 bg-[var(--bg)]",
             isSidePanelOpen ? "overflow-hidden" : "overflow-y-auto",
           )}
         >
